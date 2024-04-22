@@ -1,0 +1,39 @@
+.c_header_back {
+    background-color: rgb(240, 240, 240);
+}
+
+.c_font_sm {
+    font-size: 1rem;
+}
+.c_font_otl {
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: white;
+}
+
+.c_banner_img {
+    background-image: 
+        url("../res/country.png");
+    background-size: contain;
+    background-repeat: no-repeat, no-repeat;
+    background-position: right 25% bottom 45%;
+}
+
+.end-10 {
+    right: 15% !important;
+}
+
+.ps-6 {
+    padding-left: 5rem !important;
+}
+
+.delimeter{
+    border: none;
+    height: 2px;
+    background-color: #929292;
+}
+
+.b-box{
+    border-radius: 15px;
+    border: 1px solid #929292;
+    background-color: white;
+}
