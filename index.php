@@ -32,38 +32,58 @@ require_once 'content/header.php';
     <hr class="container delimeter">
 
     <div class="container">
-        <p class="fs-5 ms-5">Наши преимущества</p>
+        <p class="fs-5 ms-5 fw-semibold">Наши преимущества</p>
 
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="5000">
+                <div class="carousel-item active" data-bs-interval="4000">
                     <div class="row mx-3">
                         <div class="col clearfix b-box p-2 mx-2">
-                            <img src="..." class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+                            <img src="/assets/res/sl1.png" class="sl_img col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+                            <p class="fs-5">Многозадачное<br> использование</p>
                             <p>
-                                A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+                                Возможность осуществлять
+                                перевозку сборных грузов
+                                в интересах разных
+                                грузополучателей.
                             </p>
                         </div>
                         <div class="col clearfix b-box p-2 mx-2">
-                            <img src="..." class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+                            <img src="/assets/res/sl2.png" class="sl_img col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+                            <p class="fs-5">Наличие защищенного <br>канала передачи данных</p>
                             <p>
-                                A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+                                Данные от информационного
+                                оператора непосредственно
+                                поступают в ЕАИС ФТС России
+                                через защищенный канал связи.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="5000">
+                <div class="carousel-item" data-bs-interval="4000">
                     <div class="row mx-3">
                         <div class="col clearfix b-box p-2 mx-2">
-                            <img src="..." class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+                            <img src="/assets/res/sl3.png" class="sl_img col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+                            <p class="fs-5">Гарантия сбора <br>таможенных платежей</p>
                             <p>
-                                A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+                                Возможность загрузки фото/видео,
+                                загружаемых/выгружаемых товаров.
+                                Подкрепления к перевозке
+                                подтверждающих документов
+                                об уплате сборов и пошлин.
                             </p>
                         </div>
                         <div class="col clearfix b-box p-2 mx-2">
-                            <img src="..." class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+                            <img src="/assets/res/sl4.png" class="sl_img col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+                            <p class="fs-5">Бесшовная <br>логистика</p>
                             <p>
-                                A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+                                Возможность производить
+                                мультимодальные перевозки,
+                                в том числе - автотранспорт
+                                - ж.д. перевозчик;
+                                автотранспорт-судно
+                                (речные перевозки) без наличия
+                                обеспечительных мер.
                             </p>
                         </div>
                     </div>
@@ -80,8 +100,32 @@ require_once 'content/header.php';
         </div>
     </div>
 
+    <hr class="container delimeter mt-5">
+    <div class="container">
+        <p class="fs-5 ms-5 fw-semibold">Наши партнеры</p>
+        <div class="text-center row">
+            <div class="col mx-5 my-3">
+                <img src="/assets/res/par1.png" alt="..." style="height: 7rem;" class="my-2">
+                <p>ФТС</p>
+            </div>
+            <div class="col mx-5 my-3">
+                <img src="/assets/res/par2.png" alt="..." style="height: 7rem;" class="my-2">
+                <p>ЦИТТУ</p>
+            </div>
+            <div class="col mx-5 my-3">
+                <img src="/assets/res/par3.png" alt="..." style="height: 7rem;" class="my-2">
+                <p>ИНГОССТРАХ</p>
+            </div>
+            <div class="col mx-5 my-3">
+                <img src="/assets/res/par4.png" alt="..." style="height: 7rem;" class="my-2">
+                <p>МТС</p>
+            </div>
+        </div>
+    </div>
+    <hr class="container delimeter mt-5">
+
 </main>
 
 <?php
-require_once 'content/header.php';
+require_once 'content/footer.php';
 ?>
