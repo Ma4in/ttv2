@@ -5,13 +5,14 @@
 .c_font_sm {
     font-size: 1rem;
 }
+
 .c_font_otl {
     -webkit-text-stroke-width: 0.3px;
     -webkit-text-stroke-color: white;
 }
 
 .c_banner_img {
-    background-image: 
+    background-image:
         url("../res/country.png");
     background-size: contain;
     background-repeat: no-repeat, no-repeat;
@@ -26,20 +27,36 @@
     padding-left: 5rem !important;
 }
 
-.delimeter{
+.my-6 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+}
+
+.delimeter {
     border: none;
     height: 2px;
     background-color: #929292;
 }
 
-.b-box{
+.b-box {
     border-radius: 15px;
     border: 1px solid #929292;
     background-color: white;
 }
 
-.sl_img{
+.sl_img {
     height: 8rem;
     width: 8rem;
     margin: 3rem;
+}
+
+.form_field {
+    padding: 5px;
+    width: 14rem;
+    border-radius: 5px;
+    border: 1px solid #929292;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }

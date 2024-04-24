@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-1 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Главная</a>
+                            <a class="nav-link" href="index.php">Главная</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Услуги</a>
@@ -44,8 +44,8 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <button class="btn btn-outline-primary ms-1">Регистрация</button>
-                        <button class="btn btn-outline-primary ms-1">Вход</button>
+                        <a href="reg.php"><button class="btn btn-outline-primary ms-1">Регистрация</button></a>
+                        <a href="login.php"><button class="btn btn-outline-primary ms-1">Вход</button></a>
                     </div>
                 </div>
             </div>
