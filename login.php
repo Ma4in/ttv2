@@ -19,7 +19,7 @@ require_once 'content/header.php';
             </p>
             <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                require_once(__DIR__ . '/lk/boot.php');
+                require_once(__DIR__ . '/lk/db_con/boot.php');
 
                 $query->execute(['usPass' => $_POST['password'], 'usLogin' => $_POST['login']]);
                 $ans = $query->fetchAll();

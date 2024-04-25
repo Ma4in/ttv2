@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Tamga-transit</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/custom.css">
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/../../assets/css/main.css">
+    <link rel="stylesheet" href="/../../assets/css/custom.css">
+    <script src="/../../assets/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -24,25 +24,27 @@
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg c_header_back">
             <div class="container">
-                <a class="navbar-brand" href="index.php">TRANSIT</a>
+                <a class="navbar-brand">TRANSIT</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-1 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Услуги</a>
+                            <a class="nav-link" href="#">Водители</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Тарифы</a>
+                            <a class="nav-link" href="#">Транспортные средства</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Таможенные режимы</a>
+                            <a class="nav-link" href="#">Счета</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Мониторинг</a>
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <a href="reg.php"><button class="btn btn-outline-primary ms-1">Регистрация</button></a>
-                        <a href="login.php"><button class="btn btn-outline-primary ms-1">Вход</button></a>
+                        <a href="../../index.php"><button class="btn btn-outline-secondary ms-1">Выход</button></a>
                     </div>
                 </div>
             </div>

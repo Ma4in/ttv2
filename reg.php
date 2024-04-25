@@ -5,7 +5,7 @@ require_once 'content/header.php';
 <main>
     <div class="container text-center py-5">
         <form action="/mailer/send_mail.php" method="post" class="b-box mx-auto align-middle d-inline-block p-3 my-5">
-            <p href="">Оставьте заявку на регистрацию</p>
+            <p class="fw-semibold fs-5">Оставьте заявку на регистрацию</p>
             <p>
                 <input class="form_field" type="text" name="surname" placeholder="Фамилия" pattern="^.{3,}$" required>
             </p>
