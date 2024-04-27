@@ -12,7 +12,7 @@ require_once 'content/header.php';
                 <input class="form_field" type="text" name="login" id="login" placeholder="Логин (email)" pattern="^.{5,}$" required>
             </p>
             <p>
-                <input class="form_field" type="password" name="password" id="password" placeholder="Пароль" pattern="^.{8,}$" required>
+                <input class="form_field" type="password" name="password" id="password" placeholder="Пароль" pattern="^.{5,}$" required>
             </p>
             <p>
                 <input type="submit" name="send" value="Войти" class="btn btn-primary" disabled>
@@ -21,6 +21,11 @@ require_once 'content/header.php';
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 require_once(__DIR__ . '/lk/db_con/boot.php');
 
+                $checkLogin = 'SELECT (password = crypt(:usPass, password)) 
+                AS password_match
+                FROM tt.users
+                WHERE login = :usLogin ;';
+                $query = $pdo->prepare($checkLogin);
                 $query->execute(['usPass' => $_POST['password'], 'usLogin' => $_POST['login']]);
                 $ans = $query->fetchAll();
                 if (count($ans) == 0) {

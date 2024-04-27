@@ -15,7 +15,7 @@
             <div class="m-1">
                 <select class="form-select form-select-sm" aria-label="Small select example">
                     <option selected value="rus">Русский</option>
-                    <option value="eng">Английский</option>
+                    <option value="eng">English</option>
                 </select>
             </div>
             <div class="m-1 pb-1">Language</div>

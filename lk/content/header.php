@@ -15,7 +15,7 @@
             <div class="m-1">
                 <select class="form-select form-select-sm" aria-label="Small select example">
                     <option selected value="rus">Русский</option>
-                    <option value="eng">Английский</option>
+                    <option value="eng">English</option>
                 </select>
             </div>
             <div class="m-1 pb-1">Language</div>
@@ -41,6 +41,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Мониторинг</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile_con.php">Профиль</a>
                         </li>
                     </ul>
                     <div class="d-flex">

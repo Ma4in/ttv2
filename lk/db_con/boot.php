@@ -13,13 +13,5 @@ function pdo(): PDO
 
     return $pdo;
 }
-
-
-$checkLogin = 'SELECT (password = crypt(:usPass, password)) 
-AS password_match
-FROM tt.users
-WHERE login = :usLogin ;';
-
 $pdo = pdo();
-$query = $pdo->prepare($checkLogin);
 

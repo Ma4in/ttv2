@@ -11,7 +11,12 @@ require_once 'content/header.php';
             header("Refresh:0; url=/../../index.php");
             session_destroy();
         }
-
+        
+        $checkLogin = 'SELECT (password = crypt(:usPass, password)) 
+        AS password_match
+        FROM tt.users
+        WHERE login = :usLogin ;';
+        $query = $pdo->prepare($checkLogin);
         $query->execute(['usPass' => $_SESSION['password'], 'usLogin' => $_SESSION['login']]);
         $ans = $query->fetchAll();
 
@@ -26,11 +31,12 @@ require_once 'content/header.php';
                 $query->execute(['usLogin' => $_SESSION['login']]);
                 $ans = $query->fetchAll();
                 if (empty($ans)) {
-                    echo "<p>Заполните данные</p>";
+                    $addNewStr = 'insert into tt.user_corp (user_login) values (:usLogin);';
+                    $query = $pdo->prepare($addNewStr);
+                    $query->execute(['usLogin' => $_SESSION['login']]);
+                    header("Refresh:0; url=profile_con.php");
                 } else {
-                    // header("Refresh:0; url=profile.php");
-                    print_r($ans);
-                    echo "<p>Привет</p>";
+                    echo "<p>Привет!╰(*°▽°*)╯</p>";
                 }
             }
         }
