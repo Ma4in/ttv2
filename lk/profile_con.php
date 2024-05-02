@@ -3,6 +3,11 @@ require_once 'content/header.php';
 session_start();
 require_once(__DIR__ . '/db_con/boot.php');
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   upload($pdo);
+   header("Refresh:0; url=profile.php");
+}
+
 $getData = 'SELECT * FROM tt.user_corp WHERE user_login = :usLogin';
 $query = $pdo->prepare($getData);
 $query->execute(['usLogin' => $_SESSION['login']]);
@@ -15,7 +20,7 @@ $data = $query->fetchAll();
         <p class="fs-5">Профиль <?php echo $data[0][0]; ?></p>
         <hr class="container delimeter mt-1">
 
-        <form action="" class="was-validated px-5">
+        <form action="profile_con.php" class="was-validated px-5" method="post">
             <div class="row">
                 <div class="col-md-4">
                     <label for="namegov" class="form-label">Наименование государства зарегистрированного предприятия</label>
@@ -218,6 +223,10 @@ $data = $query->fetchAll();
                     <input type="date" class="form-control" id="doz_dateoff" name="doz_dateoff" value="<?php echo $data[0][39] ?>" required>
                 </div>
             </div>
+            <div class="col mt-2">
+                <label for="permission" class="form-label" >Разрешение на перевозку грузов третьих государств (Название государств)</label>
+                <input type="text" class="form-control" id="permission" name="permission" value="<?php echo $data[0][42] ?>" required>
+            </div>
 
             <hr class="container delimeter my-4">
             <div class="form-check">
@@ -232,10 +241,6 @@ $data = $query->fetchAll();
                 Разрешение на перевозку опасных грузов 
                 </label>
             </div>
-            <div class="col mt-2">
-                <label for="permission" class="form-label" >Разрешение на перевозку грузов третьих государств (Название государств)</label>
-                <input type="text" class="form-control" id="permission" name="permission" value="<?php echo $data[0][42] ?>" required>
-            </div>
 
             <div class="sticky-bottom bg-white text-end" style="--bs-bg-opacity: .8;">
                 <hr class="container delimeter mt-3">
@@ -245,3 +250,101 @@ $data = $query->fetchAll();
         </form>
     </div>
 </main>
+
+<?php
+function upload($pdo){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $money = "false";
+        $dancar = "false";
+        
+        if (isset( $_POST['money'])){$money = "true";}
+        if (isset( $_POST['dancar'])){$dancar = "true";}
+    
+        $updateQuery = 'UPDATE tt.user_corp
+        set 
+        namegov = :namegov,
+        name = :name,
+        second_name = :second_name,
+        formcorp = :formcorp,
+        shortname = :shortname,
+        addres_urid = :addres_urid,
+        addres_fact = :addres_fact,
+        email = :email,
+        phone1 = :phone1,
+        phone2 = :phone2,
+        inn = :inn,
+        kpp = :kpp,
+        ogrn = :ogrn,
+        compbal = :compbal,
+        bank_account = :bank_account,
+        currency_account = :currency_account,
+        transit_currency_account = :transit_currency_account,
+        itn = :itn,
+        spkmap = :spkmap,
+        spkmap_date = :spkmap_date,
+        map = :map,
+        map_dateon = :map_dateon,
+        map_datecount = :map_datecount,
+        rtp = :rtp,
+        rtp_date = :rtp_date,
+        duties = :duties,
+        dutieson = :dutieson,
+        dutiesoff = :dutiesoff,
+        insurance = :insurance,
+        ins_name = :ins_name,
+        ins_dateon = :ins_dateon,
+        ins_dateoff = :ins_dateoff,
+        dozvol = :dozvol,
+        doz_date = :doz_date,
+        doz_dateon = :doz_dateon,
+        doz_dateoff = :doz_dateoff,
+        money = :money,
+        dancar = :dancar,
+        permission = :permission
+        WHERE user_login = :usLogin;';
+    
+        $query = $pdo->prepare($updateQuery);
+        $query->execute(['usLogin' => $_SESSION['login'],
+        'namegov' => $_POST['namegov'],
+        'name' => $_POST['name'],
+        'second_name' => $_POST['second_name'],
+        'formcorp' => $_POST['formcorp'],
+        'shortname' => $_POST['shortname'],
+        'addres_urid' => $_POST['addres_urid'],
+        'addres_fact' => $_POST['addres_fact'],
+        'email' => $_POST['email'],
+        'phone1' => $_POST['phone1'],
+        'phone2' => $_POST['phone2'],
+        'inn' => $_POST['inn'],
+        'kpp' => $_POST['kpp'],
+        'ogrn' => $_POST['ogrn'],
+        'compbal' => $_POST['compbal'],
+        'bank_account' => $_POST['bank_account'],
+        'currency_account' => $_POST['currency_account'],
+        'transit_currency_account' => $_POST['transit_currency_account'],
+        'itn' => $_POST['itn'],
+        'spkmap' => $_POST['spkmap'],
+        'spkmap_date' => $_POST['spkmap_date'],
+        'map' => $_POST['map'],
+        'map_dateon' => $_POST['map_dateon'],
+        'map_datecount' => $_POST['map_datecount'],
+        'rtp' => $_POST['rtp'],
+        'rtp_date' => $_POST['rtp_date'],
+        'duties' => $_POST['duties'],
+        'dutieson' => $_POST['dutieson'],
+        'dutiesoff' => $_POST['dutiesoff'],
+        'insurance' => $_POST['insurance'],
+        'ins_name' => $_POST['ins_name'],
+        'ins_dateon' => $_POST['ins_dateon'],
+        'ins_dateoff' => $_POST['ins_dateoff'],
+        'dozvol' => $_POST['dozvol'],
+        'doz_date' => $_POST['doz_date'],
+        'doz_dateon' => $_POST['doz_dateon'],
+        'doz_dateoff' => $_POST['doz_dateoff'],
+        'money' => $money,
+        'dancar' => $dancar,
+        'permission' => $_POST['permission']
+    ]);
+    }
+}
+?>

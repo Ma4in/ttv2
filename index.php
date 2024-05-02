@@ -36,7 +36,7 @@ require_once 'content/header.php';
 
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="4000">
+                <div class="carousel-item active" data-bs-interval="3000">
                     <div class="row mx-3">
                         <div class="col clearfix b-box p-2 mx-2">
                             <img src="/assets/res/sl1.png" class="sl_img col-md-6 float-md-end mb-3 ms-md-3" alt="...">
@@ -60,7 +60,7 @@ require_once 'content/header.php';
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="4000">
+                <div class="carousel-item" data-bs-interval="3000">
                     <div class="row mx-3">
                         <div class="col clearfix b-box p-2 mx-2">
                             <img src="/assets/res/sl3.png" class="sl_img col-md-6 float-md-end mb-3 ms-md-3" alt="...">

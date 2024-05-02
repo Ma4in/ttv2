@@ -57,14 +57,14 @@ CREATE TABLE IF NOT EXISTS tt.user_corp
     -- doz_date date,
     -- doz_dateon date,
     -- doz_dateoff date,
-    money boolean,
-    dancar boolean,
-    permission text,
+    -- money boolean,
+    -- dancar boolean,
+    -- permission text,
 
     foreign key (user_login) references tt.users (login) on delete cascade
 );
 
-UPDATE user_corp
+UPDATE tt.user_corp
 set namegov = 'def',
 name = 'default',
 second_name = 'default',
@@ -111,7 +111,7 @@ WHERE user_login = 'default';
 
 CREATE TABLE IF NOT EXISTS tt.drivers
 (
-    user_login varchar UNIQUE NOT NULL,
+    user_login varchar,
     fiospec text,
     post text,
     fio_v text,
@@ -127,9 +127,12 @@ CREATE TABLE IF NOT EXISTS tt.drivers
     foreign key (user_login) references tt.users (login) on delete cascade
 );
 
+INSERT INTO tt.DRIVERS (user_login, fiospec, post, fio_v, nation, inpassnum, idl, visa, visa_date, visa_dateon, visa_dateoff, iip) 
+VALUES ('default', 'Иванов Иван Ивнович', 'Директор', 'Петров Павел Павлович', 'Русский', '123123123','na31mda','visa_default','11-11-1111','11-11-1111','11-11-1115', '12313123');
+
 CREATE TABLE IF NOT EXISTS tt.auto
 (
-    user_login varchar UNIQUE NOT NULL,
+    user_login varchar,
     type_auto text,
     tnved varchar(10),
     fuel_type varchar(5),
@@ -150,7 +153,7 @@ CREATE TABLE IF NOT EXISTS tt.auto
     color varchar(10),
     change_auto text,
     eco varchar(10),
-    trailer_type varchar(3),
+    trailer varchar(10),
     loadcap int,
     axis int,
     maxaxis int,
@@ -171,3 +174,6 @@ CREATE TABLE IF NOT EXISTS tt.auto
 
     foreign key (user_login) references tt.users (login) on delete cascade
 );
+
+INSERT INTO tt.auto (user_login, type_auto, tnved, fuel_type, country_reg, auto_id, man_name, model, vinid, engine_volume, engine_hp, engine_id, book_value, card_numb, ecosign, date_to, off_take_year, ts_code, color, change_auto, eco, trailer, loadcap, axis, maxaxis, trailer_reg_country, trailer_regnum, trailer_man_name, trailer_model, trailer_type, trailer_dors, trailer_weight, trailer_pneumo, trailer_vinid, trailer_datecre, trailer_dim, trailer_color, trailer_off_country, trailer_bsp)
+VALUES ('default', 'Седельный тягач', '8704229907', 'Газ', 'RUS', 'О888ОО 161', 'MAN', 'MAN-10', 'wman13zz09y232900', '4580', '179', '82031313', '5000000', '777rtY9', 'L', '2012-12-12', '2012-12-12', 'D', 'белый', 'отсутствуют', 'евро-5', 'Прицеп', '20000', '2', '10000', 'RUS', '1020AB', 'MAN', 'MAN-01', 'Цистерна', '1', '20000', '1', 'ABWGD456123', '12-12-2012', '3.2;2.5;12;70', 'красный', 'RUS', '3000000');

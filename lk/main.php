@@ -37,6 +37,7 @@ require_once 'content/header.php';
                     header("Refresh:0; url=profile_con.php");
                 } else {
                     echo "<p>Привет!╰(*°▽°*)╯</p>";
+                    header("Refresh:1; url=profile.php");
                 }
             }
         }
