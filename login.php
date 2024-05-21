@@ -37,7 +37,11 @@ require_once 'content/header.php';
                         session_start();
                         $_SESSION['login'] = $_POST['login'];
                         $_SESSION['password'] = $_POST['password'];
-                        header("Refresh:0; url=lk/main.php");
+                        if($_SESSION['login'] == 'admin_panel'){
+                            header("Refresh:0; url=admin_panel/index.php");
+                        } else{
+                            header("Refresh:0; url=lk/index.php");
+                        }
                     }
                 }
             }

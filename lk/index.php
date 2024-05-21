@@ -6,11 +6,6 @@ require_once 'content/header.php';
     <div class="container">
         <?php
         require_once(__DIR__ . '/db_con/boot.php');
-        session_start();
-        if (!isset($_SESSION['password'], $_SESSION['login'])) {
-            header("Refresh:0; url=/../../index.php");
-            session_destroy();
-        }
         
         $checkLogin = 'SELECT (password = crypt(:usPass, password)) 
         AS password_match
