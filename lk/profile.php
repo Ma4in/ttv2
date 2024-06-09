@@ -1,5 +1,6 @@
 <?php
 require_once 'content/header.php';
+require_once 'crypt.php';
 session_start();
 require_once(__DIR__ . '/db_con/boot.php');
 
@@ -21,23 +22,23 @@ $data = $query->fetchAll();
                 </div>
                 <div class="col">
                     <p>Наименование предприятия на русском языке : <br>
-                    <div class="ps-3 fw-medium fs-5"><?php echo $data[0][2]; ?></div>
+                    <b class="ps-3 fw-medium fs-5"><?php echo decrypt($data[0][2]); ?></b>
                     </p>
-                    <p>Наименование предприятия на английском : <br> <b class="ps-3 fw-medium fs-5"><?php echo $data[0][3]; ?></b></p>
+                    <p>Наименование предприятия на английском : <br> <b class="ps-3 fw-medium fs-5"><?php echo decrypt($data[0][3]); ?></b></p>
                 </div>
-                <p>Полное наименование предприятия : <br> <b class="ps-3 fw-medium fs-5"><?php echo $data[0][5]; ?></b></p>
+                <p>Полное наименование предприятия : <br> <b class="ps-3 fw-medium fs-5"><?php echo decrypt($data[0][5]); ?></b></p>
             </div>
 
             <hr class="container delimeter mt-1">
 
             <div class="row">
                 <div class="col">
-                    <p>Юридический адрес предприятия : <br> <b class="ps-3 fw-medium fs-5"><?php echo $data[0][6]; ?></b></p>
+                    <p>Юридический адрес предприятия : <br> <b class="ps-3 fw-medium fs-5"><?php echo decrypt($data[0][6]); ?></b></p>
                 </div>
                 <div class="col">
-                    <p>Почтовый адрес предприятия : <br> <b class="ps-3 fw-medium fs-5"><?php echo $data[0][7]; ?></b></p>
+                    <p>Почтовый адрес предприятия : <br> <b class="ps-3 fw-medium fs-5"><?php echo decrypt($data[0][7]); ?></b></p>
                 </div>
-                <p>Электронная почта : <br> <b class="ps-3 fw-medium fs-5"><?php echo $data[0][8]; ?></b></p>
+                <p>Электронная почта : <br> <b class="ps-3 fw-medium fs-5"><?php echo decrypt($data[0][8]); ?></b></p>
                 <p>Телефон стационар : <br> <b class="ps-3 fw-medium fs-5"><?php echo $data[0][9]; ?></b></p>
                 <p>Телефон мобильный : <br> <b class="ps-3 fw-medium fs-5"><?php echo $data[0][10]; ?></b></p>
             </div>
@@ -60,13 +61,13 @@ $data = $query->fetchAll();
 
             <div class="row">
                 <div class="col">
-                    <p>Бухгалтерский баланс компании : <br> <b class="fw-medium fs-5"><?php echo $data[0][14]; ?></b></p>
-                    <p>Номер расчетного счета организации : <br> <b class="fw-medium fs-5"><?php echo $data[0][15]; ?></b></p>
-                    <p>Идентификационный таможенный номер (ИТН) предприятия : <br> <b class="fw-medium fs-5"><?php echo $data[0][18]; ?></b></p>
+                    <p>Бухгалтерский баланс компании : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][14]); ?></b></p>
+                    <p>Номер расчетного счета организации : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][15]); ?></b></p>
+                    <p>Идентификационный таможенный номер (ИТН) предприятия : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][18]); ?></b></p>
                 </div>
                 <div class="col">
-                    <p>Номер лицевого счета организации : <br> <b class="fw-medium fs-5"><?php echo $data[0][16]; ?></b></p>
-                    <p>Валютный счет организации : <br> <b class="fw-medium fs-5"><?php echo $data[0][17]; ?></b></p>
+                    <p>Номер лицевого счета организации : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][16]); ?></b></p>
+                    <p>Валютный счет организации : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][17]); ?></b></p>
                 </div>
             </div>
 
@@ -75,7 +76,7 @@ $data = $query->fetchAll();
             <p>Свидетельство профессиональной компетентности международного автомобильного перевозчика</p>
             <div class="row">
                 <div class="col-md-3">
-                    <p>Серия / номер : <br> <b class="fw-medium fs-5"><?php echo $data[0][19]; ?></b></p>
+                    <p>Серия / номер : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][19]); ?></b></p>
                 </div>
                 <div class="col-md-2">
                     <p>Дата выдачи : <br> <b class="fw-medium fs-5"><?php echo $data[0][20]; ?></b></p>
@@ -87,7 +88,7 @@ $data = $query->fetchAll();
             <p> Удостоверение допуска предприятия к осуществлению международных автомобильных перевозок</p>
             <div class="row">
                 <div class="col-md-3">
-                    <p>Серия / номер : <br> <b class="fw-medium fs-5"><?php echo $data[0][21]; ?></b></p>
+                    <p>Серия / номер : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][21]); ?></b></p>
                 </div>
                 <div class="col-md-2">
                     <p>Срок действия от: <br> <b class="fw-medium fs-5"><?php echo $data[0][22]; ?></b></p>
@@ -102,7 +103,7 @@ $data = $query->fetchAll();
             <p>Свидетельство о включении предприятия в реестр таможенных перевозчиков</p>
             <div class="row">
                 <div class="col-md-3">
-                    <p>Серия / номер : <br> <b class="fw-medium fs-5"><?php echo $data[0][24]; ?></b></p>
+                    <p>Серия / номер : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][24]); ?></b></p>
                 </div>
                 <div class="col-md-2">
                     <p>Дата выдачи : <br> <b class="fw-medium fs-5"><?php echo $data[0][25]; ?></b></p>
@@ -126,10 +127,10 @@ $data = $query->fetchAll();
 
             <hr class="container delimeter mt-1">
 
-            <p>Наименование страховой компании : <br> <b class="fw-medium fs-5"><?php echo $data[0][29]; ?></b></p>
+            <p>Наименование страховой компании : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][29]); ?></b></p>
             <div class="row">
                 <div class="col-md-3">
-                    <p>Номер полиса : <br> <b class="fw-medium fs-5"><?php echo $data[0][30]; ?></b></p>
+                    <p>Номер полиса : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][30]); ?></b></p>
                 </div>
                 <div class="col-md-2">
                     <p>Срок от: <br> <b class="fw-medium fs-5"><?php echo $data[0][31]; ?></b></p>
@@ -142,7 +143,7 @@ $data = $query->fetchAll();
             <hr class="container delimeter mt-1">
 
             <p>Государства, в которые у предприятия имеются разрешения на въезд (дозволы) Заполняется уже перед самой поездкой</p>
-            <p>Наименование документа : <br> <b class="fw-medium fs-5"><?php echo $data[0][36]; ?></b></p>
+            <p>Наименование документа : <br> <b class="fw-medium fs-5"><?php echo decrypt($data[0][36]); ?></b></p>
             <div class="row">
                 <div class="col-md-2">
                     <p>Дата выдачи : <br> <b class="fw-medium fs-5"><?php echo $data[0][37]; ?></b></p>

@@ -1,5 +1,6 @@
 <?php
 require_once 'content/header.php';
+require_once 'crypt.php';
 session_start();
 require_once(__DIR__ . '/db_con/boot.php');
 
@@ -34,33 +35,33 @@ $data = $query->fetchAll();
             <div class="row mt-3">
                 <div class="col-md-6">
                     <label for="name" class="form-label">Наименование предприятия на русском языке</label>
-                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $data[0][2] ?>" required>
+                    <input type="text" class="form-control" id="name" name="name" value="<?php echo decrypt($data[0][2]) ?>" required>
                 </div>
                 <div class="col-md-6">
                     <label for="second_name" class="form-label">Наименование предприятия на английском языке</label>
-                    <input type="text" class="form-control" id="second_name" name="second_name" value="<?php echo $data[0][3] ?>" required>
+                    <input type="text" class="form-control" id="second_name" name="second_name" value="<?php echo decrypt($data[0][3]) ?>" required>
                 </div>
             </div>
             <div class="mt-3">
                 <label for="shortname" class="form-label">Полное наименование предприятия</label>
-                <input type="text" class="form-control" id="shortname" name="shortname" value="<?php echo $data[0][5] ?>" required>
+                <input type="text" class="form-control" id="shortname" name="shortname" value="<?php echo decrypt($data[0][5]) ?>" required>
             </div>
 
             <hr class="container delimeter my-4">
 
             <div>
                 <label for="addres_urid" class="form-label">Юридический адрес предприятия</label>
-                <input type="text" class="form-control" id="addres_urid" name="addres_urid" value="<?php echo $data[0][6] ?>" required>
+                <input type="text" class="form-control" id="addres_urid" name="addres_urid" value="<?php echo decrypt($data[0][6]) ?>" required>
             </div>
             <div class="mt-3">
                 <label for="addres_fact" class="form-label">Почтовый адрес предприятия</label>
-                <input type="text" class="form-control" id="addres_fact" name="addres_fact" value="<?php echo $data[0][7] ?>" required>
+                <input type="text" class="form-control" id="addres_fact" name="addres_fact" value="<?php echo decrypt($data[0][7]) ?>" required>
             </div>
 
             <div class="row mt-3">
                 <div class="col-md-4">
                     <label for="email" class="form-label">Электронная почта</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<?php echo $data[0][8] ?>" required>
+                    <input type="email" class="form-control" id="email" name="email" value="<?php echo decrypt($data[0][8]) ?>" required>
                 </div>
                 <div class="col-md-4">
                     <label for="phone1" class="form-label">Телефон стационар</label>
@@ -92,28 +93,28 @@ $data = $query->fetchAll();
             <div class="row mt-3">
                 <div class="col-md-6">
                     <label for="compbal" class="form-label">Бухгалтерский баланс компании </label>
-                    <input type="text" class="form-control" id="compbal" name="compbal" value="<?php echo $data[0][14] ?>" required>
+                    <input type="text" class="form-control" id="compbal" name="compbal" value="<?php echo decrypt($data[0][14]) ?>" required>
                 </div>
                 <div class="col-md-6">
                     <label for="bank_account" class="form-label">Номер расчетного счета организации</label>
-                    <input type="text" class="form-control" id="bank_account" name="bank_account" value="<?php echo $data[0][15] ?>" required>
+                    <input type="text" class="form-control" id="bank_account" name="bank_account" value="<?php echo decrypt($data[0][15]) ?>" required>
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col-md-6">
                     <label for="currency_account" class="form-label">Номер лицевого счета организации</label>
-                    <input type="text" class="form-control" id="currency_account" name="currency_account" value="<?php echo $data[0][16] ?>" required>
+                    <input type="text" class="form-control" id="currency_account" name="currency_account" value="<?php echo decrypt($data[0][16]) ?>" required>
                 </div>
                 <div class="col-md-6">
                     <label for="transit_currency_account" class="form-label">Валютный счет организации</label>
-                    <input type="text" class="form-control" id="transit_currency_account" name="transit_currency_account" value="<?php echo $data[0][17] ?>" required>
+                    <input type="text" class="form-control" id="transit_currency_account" name="transit_currency_account" value="<?php echo decrypt($data[0][17]) ?>" required>
                 </div>
             </div>
 
             <div class="col-sm-9 mt-3">
                 <label for="itn" class="form-label">Идентификационный таможенный номер (ИТН) предприятия</label>
-                <input type="text" class="form-control" id="itn" name="itn" value="<?php echo $data[0][18] ?>" required>
+                <input type="text" class="form-control" id="itn" name="itn" value="<?php echo decrypt($data[0][18]) ?>" required>
             </div>
 
             <hr class="container delimeter my-4">
@@ -122,7 +123,7 @@ $data = $query->fetchAll();
             <div class="row mt-3">
                 <div class="col-md-6">
                     <label for="spkmap" class="form-label">Серия / номер</label>
-                    <input type="text" class="form-control" id="spkmap" name="spkmap" value="<?php echo $data[0][19] ?>" required>
+                    <input type="text" class="form-control" id="spkmap" name="spkmap" value="<?php echo decrypt($data[0][19]) ?>" required>
                 </div>
                 <div class="col-md-2">
                     <label for="spkmap_date" class="form-label">Дата выдачи</label>
@@ -136,7 +137,7 @@ $data = $query->fetchAll();
             <div class="row mt-3">
                 <div class="col-md-6">
                     <label for="map" class="form-label">Серия / номер</label>
-                    <input type="text" class="form-control" id="map" name="map" value="<?php echo $data[0][21] ?>" required>
+                    <input type="text" class="form-control" id="map" name="map" value="<?php echo decrypt($data[0][21]) ?>" required>
                 </div>
                 <div class="col-md-2">
                     <label for="map_dateon" class="form-label">Срок действия от</label>
@@ -154,7 +155,7 @@ $data = $query->fetchAll();
             <div class="row mt-3">
                 <div class="col-md-6">
                     <label for="rtp" class="form-label">Серия / номер</label>
-                    <input type="text" class="form-control" id="rtp" name="rtp" value="<?php echo $data[0][24] ?>" required>
+                    <input type="text" class="form-control" id="rtp" name="rtp" value="<?php echo decrypt($data[0][24]) ?>" required>
                 </div>
                 <div class="col-md-2">
                     <label for="rtp_date" class="form-label">Дата выдачи</label>
@@ -185,12 +186,12 @@ $data = $query->fetchAll();
             <p>Данные страхования</p>
             <div class="col-md-6">
                 <label for="insurance" class="form-label">Наименование страховой компании</label>
-                <input type="text" class="form-control" id="insurance" name="insurance" value="<?php echo $data[0][29] ?>" required>
+                <input type="text" class="form-control" id="insurance" name="insurance" value="<?php echo decrypt($data[0][29]) ?>" required>
             </div>
             <div class="row mt-3">
                 <div class="col-md-4">
                     <label for="ins_name" class="form-label">Номер полиса</label>
-                    <input type="text" class="form-control" id="ins_name" name="ins_name" value="<?php echo $data[0][30] ?>" required>
+                    <input type="text" class="form-control" id="ins_name" name="ins_name" value="<?php echo decrypt($data[0][30]) ?>" required>
                 </div>
                 <div class="col-md-2">
                     <label for="ins_dateon" class="form-label">начало</label>
@@ -207,7 +208,7 @@ $data = $query->fetchAll();
             <p>Государства, в которые у предприятия имеются разрешения на въезд (дозволы) Заполняется уже перед самой поездкой</p>
             <div class="col-md-6">
                 <label for="dozvol" class="form-label">Наименование документа</label>
-                <input type="text" class="form-control" id="dozvol" name="dozvol" value="<?php echo $data[0][36] ?>" required>
+                <input type="text" class="form-control" id="dozvol" name="dozvol" value="<?php echo decrypt($data[0][36]) ?>" required>
             </div>
             <div class="row mt-3">
                 <div class="col-md-2">
@@ -306,38 +307,38 @@ function upload($pdo){
         $query = $pdo->prepare($updateQuery);
         $query->execute(['usLogin' => $_SESSION['login'],
         'namegov' => $_POST['namegov'],
-        'name' => $_POST['name'],
-        'second_name' => $_POST['second_name'],
+        'name' => encrypt($_POST['name']),
+        'second_name' => encrypt($_POST['second_name']),
         'formcorp' => $_POST['formcorp'],
-        'shortname' => $_POST['shortname'],
-        'addres_urid' => $_POST['addres_urid'],
-        'addres_fact' => $_POST['addres_fact'],
-        'email' => $_POST['email'],
+        'shortname' => encrypt($_POST['shortname']),
+        'addres_urid' => encrypt($_POST['addres_urid']),
+        'addres_fact' => encrypt($_POST['addres_fact']),
+        'email' => encrypt($_POST['email']),
         'phone1' => $_POST['phone1'],
         'phone2' => $_POST['phone2'],
         'inn' => $_POST['inn'],
         'kpp' => $_POST['kpp'],
         'ogrn' => $_POST['ogrn'],
-        'compbal' => $_POST['compbal'],
-        'bank_account' => $_POST['bank_account'],
-        'currency_account' => $_POST['currency_account'],
-        'transit_currency_account' => $_POST['transit_currency_account'],
-        'itn' => $_POST['itn'],
-        'spkmap' => $_POST['spkmap'],
+        'compbal' => encrypt($_POST['compbal']),
+        'bank_account' => encrypt($_POST['bank_account']),
+        'currency_account' => encrypt($_POST['currency_account']),
+        'transit_currency_account' => encrypt($_POST['transit_currency_account']),
+        'itn' => encrypt($_POST['itn']),
+        'spkmap' => encrypt($_POST['spkmap']),
         'spkmap_date' => $_POST['spkmap_date'],
-        'map' => $_POST['map'],
+        'map' => encrypt($_POST['map']),
         'map_dateon' => $_POST['map_dateon'],
         'map_datecount' => $_POST['map_datecount'],
-        'rtp' => $_POST['rtp'],
+        'rtp' => encrypt($_POST['rtp']),
         'rtp_date' => $_POST['rtp_date'],
         'duties' => $_POST['duties'],
         'dutieson' => $_POST['dutieson'],
         'dutiesoff' => $_POST['dutiesoff'],
-        'insurance' => $_POST['insurance'],
-        'ins_name' => $_POST['ins_name'],
+        'insurance' => encrypt($_POST['insurance']),
+        'ins_name' => encrypt($_POST['ins_name']),
         'ins_dateon' => $_POST['ins_dateon'],
         'ins_dateoff' => $_POST['ins_dateoff'],
-        'dozvol' => $_POST['dozvol'],
+        'dozvol' => encrypt($_POST['dozvol']),
         'doz_date' => $_POST['doz_date'],
         'doz_dateon' => $_POST['doz_dateon'],
         'doz_dateoff' => $_POST['doz_dateoff'],

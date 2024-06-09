@@ -138,7 +138,7 @@ $data = $query->fetchAll();
             </div>
             <div class="row mb-3">
                 <div class="col-md-5">
-                    VIN : <b><?php echo $data[0][33] ?></b> кг.
+                    VIN : <b><?php echo $data[0][33] ?></b>
                 </div>
                 <div class="col-md-4">
                     Дата выпуска : <b><?php echo $data[0][34] ?></b>
@@ -151,7 +151,7 @@ $data = $query->fetchAll();
             </p>
             <div class="row mb-3">
                 <div class="col-md-4">
-                    Цвет : <b><?php echo $data[0][36] ?></b> кг.
+                    Цвет : <b><?php echo $data[0][36] ?></b>
                 </div>
                 <div class="col-md-4">
                     Страна выпуска : <b><?php echo $data[0][37] ?></b>

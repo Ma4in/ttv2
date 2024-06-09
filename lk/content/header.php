@@ -48,7 +48,7 @@
                             <a class="nav-link" href="#">Счета</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Мониторинг</a>
+                            <a class="nav-link" href="https://seal.kvant.online/#/dashboard">Мониторинг</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="profile.php">Профиль</a>

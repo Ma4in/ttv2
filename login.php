@@ -29,10 +29,10 @@ require_once 'content/header.php';
                 $query->execute(['usPass' => $_POST['password'], 'usLogin' => $_POST['login']]);
                 $ans = $query->fetchAll();
                 if (count($ans) == 0) {
-                    echo 'incorrect login';
+                    echo 'Неверный логин или пароль';
                 } else {
                     if ($ans[0]['password_match'] == 0) {
-                        echo 'incorrect password';
+                        echo 'Неверный логин или пароль';
                     } else {
                         session_start();
                         $_SESSION['login'] = $_POST['login'];
